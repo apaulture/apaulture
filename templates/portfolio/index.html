@@ -1,1 +1,28 @@
-Apaulture
+{% extends 'base.html' %}
+
+{% block title %}Apaulture{% endblock title %}
+
+{% block content %}
+    <div class="text-secondary user-select-none">
+        <div class="position-absolute top-50 start-50 translate-middle text-center">
+            <div class="d-flex text-uppercase mx-4">
+                <h1 style="letter-spacing: 10px;">apaultur</h1><h1>e</h1>
+            </div>
+            <hr class="my-1">
+            <p>Portfolio est. 5.11.23</p>
+        </div>
+        <div class="position-absolute bottom-0 start-50 translate-middle-x text-center">
+            <div class="container px-4 text-center">
+                <div class="row gx-2">
+                    <div class="col">
+                        <a href="https://github.com/Apaulture" class="text-secondary nav-link p-0" target="_blank"><i class="bi-github" style="font-size: 1.4rem;"></i></i></a>
+                    </div>
+                    <div class="col">
+                        <a href="https://www.linkedin.com/in/apaulture/" class="text-secondary nav-link p-0" target="_blank"><i class="bi-linkedin" style="font-size: 1.4rem;"></i></i></a>
+                    </div>
+                </div>
+            </div>
+            <h6 class="text-uppercase mt-2 mb-3" style="font-size: 0.75rem;">Deployed on Azure</h6>
+        </div>
+    </div>
+{% endblock content %}
