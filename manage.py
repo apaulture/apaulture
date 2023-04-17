@@ -16,8 +16,8 @@ def main():
         load_dotenv('./.env')
 
     # When running on Azure App Service you should use the production settings.
-    settings_module = "azureproject.production" if 'WEBSITE_HOSTNAME' in os.environ else 'azureproject.settings'
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'apaulture.settings')
+    settings_module = "apaulture.prod" if 'WEBSITE_HOSTNAME' in os.environ else 'apaulture.settings'
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
