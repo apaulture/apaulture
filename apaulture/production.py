@@ -2,10 +2,10 @@ from .settings import *
 from .settings import BASE_DIR
 import os
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
-ALLOWED_HOSTS.append('apaulture.com')
+ALLOWED_HOSTS += [os.environ['CNAME']]
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
 
 MIDDLEWARE = [
