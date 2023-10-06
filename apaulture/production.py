@@ -1,6 +1,4 @@
 from .settings import *
-from .settings import BASE_DIR
-import os
 
 protocol = 'https://'
 
@@ -10,15 +8,8 @@ ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.env
 ALLOWED_HOSTS += [os.environ['CNAME']]
 CSRF_TRUSTED_ORIGINS = [protocol + os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+MIDDLEWARE += [
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 conn_str = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
@@ -36,7 +27,7 @@ DATABASES = {
 
 AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME')
 AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY')
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.file.core.windows.net'
 
 STATICFILES_STORAGE = os.environ['STATICFILES_STORAGE'] if 'STATICFILES_STORAGE' in os.environ else []
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
