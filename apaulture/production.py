@@ -27,11 +27,13 @@ DATABASES = {
 
 AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME')
 AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY')
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.file.core.windows.net'
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+AZURE_LOCATION = os.environ['AZURE_LOCATION'] if 'AZURE_LOCATION' in os.environ else []
+AZURE_CONTAINER = os.environ['AZURE_CONTAINER'] if 'AZURE_CONTAINER' in os.environ else []
 
 STATICFILES_STORAGE = os.environ['STATICFILES_STORAGE'] if 'STATICFILES_STORAGE' in os.environ else []
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = f'{protocol}{AZURE_CUSTOM_DOMAIN}/static/'
+STATIC_LOCATION = 'static'
+STATIC_URL = f'{protocol}{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
 
 DEFAULT_FILE_STORAGE = os.environ['DEFAULT_FILE_STORAGE'] if 'DEFAULT_FILE_STORAGE' in os.environ else []
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
