@@ -33,6 +33,7 @@ AZURE_CONTAINER = os.environ['AZURE_CONTAINER'] if 'AZURE_CONTAINER' in os.envir
 
 STATICFILES_STORAGE = os.environ['STATICFILES_STORAGE'] if 'STATICFILES_STORAGE' in os.environ else []
 STATIC_LOCATION = 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = f'{protocol}{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
 
 DEFAULT_FILE_STORAGE = os.environ['DEFAULT_FILE_STORAGE'] if 'DEFAULT_FILE_STORAGE' in os.environ else []
