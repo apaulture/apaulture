@@ -34,7 +34,8 @@ AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 STATICFILES_STORAGE = os.environ['STATICFILES_STORAGE'] if 'STATICFILES_STORAGE' in os.environ else []
 STATIC_LOCATION = 'static'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = f'{protocol}{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+STATIC_HOST = os.environ['STATIC_HOST'] if not DEBUG else ''
+STATIC_URL = f'{STATIC_HOST}/static/'
 
 DEFAULT_FILE_STORAGE = os.environ['DEFAULT_FILE_STORAGE'] if 'DEFAULT_FILE_STORAGE' in os.environ else []
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
