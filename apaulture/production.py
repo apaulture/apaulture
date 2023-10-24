@@ -28,8 +28,8 @@ DATABASES = {
 AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME')
 AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY')
 AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-AZURE_LOCATION = os.environ['AZURE_LOCATION'] if 'AZURE_LOCATION' in os.environ else []
-AZURE_CONTAINER = os.environ['AZURE_CONTAINER'] if 'AZURE_CONTAINER' in os.environ else []
+# AZURE_LOCATION = os.environ['AZURE_LOCATION'] if 'AZURE_LOCATION' in os.environ else []
+# AZURE_CONTAINER = os.environ['AZURE_CONTAINER'] if 'AZURE_CONTAINER' in os.environ else []
 
 STATICFILES_STORAGE = os.environ['STATICFILES_STORAGE'] if 'STATICFILES_STORAGE' in os.environ else []
 STATIC_LOCATION = 'static'
