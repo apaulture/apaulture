@@ -1,0 +1,18 @@
+[project]
+name = "Apaulture"
+version = "1"
+dependencies = [
+    "django",
+    "psycopg2-binary",
+    "python-dotenv",
+    "django-extensions",
+    "pip-tools"
+]
+
+[project.optional-dependencies]
+prod = [
+    "gunicorn",
+    "whitenoise"
+]
+
+dev = []

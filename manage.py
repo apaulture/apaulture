@@ -10,12 +10,12 @@ def main():
     """Run administrative tasks."""
     # If WEBSITE_HOSTNAME is defined as an environment variable, then we're running on Azure App Service
     if 'WEBSITE_HOSTNAME' in os.environ:
-        settings_module = 'apaulture.production'
+        settings_module = 'apaulture.settings.prod'
     else:
         # Only for Local Development - Load environment variables from the .env file
         print("Loading environment variables for .env file")
         load_dotenv('./.env')
-        settings_module = 'apaulture.settings'
+        settings_module = 'apaulture.settings.dev'
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
     try:
