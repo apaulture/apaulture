@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:latest
+    volumes:
+    - database_volume:/var/lib/postgresql/data
+    env_file: .env
+  web:
+    build:
+      context: app/
+      args:
+        SECRET_KEY: $SECRET_KEY
+        MANAGE_ENV: $MANAGE_ENV
+    env_file: .env
+    # command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./app:/app
+    depends_on:
+      - db
+  nginx:
+    build: nginx/
+    ports:
+      - $CLIENT_PORT:80
+    restart: always
+    depends_on:
+      - web
+
+volumes:
+  database_volume:

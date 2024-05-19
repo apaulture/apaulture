@@ -1,0 +1,36 @@
+:root,
+[data-bs-theme=light] {
+    /* --bs-apaulture-rgb: 175, 182, 192; */
+    --bs-apaulture-rgb: 140,145,153;
+    --bs-apaulture-primary-rgb: 255,251,150;
+}
+
+.text-apaulture {
+    color: rgba(var(--bs-apaulture-primary-rgb, var(--bs-bg-opacity)));
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+}
+/* AFB6C0 */
+
+.nav-focus {
+    letter-spacing: 15px;
+    text-shadow: 0 0 3px rgba(0,0,0,1);
+    color: transparent;
+    display: inline-block;
+}
+
+.bg-apaulture {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-apaulture-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.link-apaulture {
+    color: RGB(var(--bs-light-rgb));
+    opacity: 0.8;
+  }
+
+.link-apaulture:hover, .link-apaulture:focus {
+    color: RGB(var(--bs-light-rgb));
+    opacity: 1.0;
+}

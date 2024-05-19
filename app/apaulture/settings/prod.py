@@ -4,9 +4,8 @@ protocol = 'https://'
 
 DEBUG = False
 
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else [os.getenv('HOST')]
-ALLOWED_HOSTS += [os.getenv('CNAME')]
-CSRF_TRUSTED_ORIGINS = [protocol + os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
+ALLOWED_HOSTS = ['localhost', os.getenv('CNAME'), os.getenv('WEBSITE_HOSTNAME')]
+CSRF_TRUSTED_ORIGINS = [f'http://localhost:{os.getenv("APP_PORT")}']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -19,19 +18,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AZURE_CONNECTIONSTRING = os.environ.get('AZURE_POSTGRESQL_CONNECTIONSTRING')
-if AZURE_CONNECTIONSTRING:
-    postgres_connection_string = {pair.split('=')[0]: pair.split('=')[1] for pair in AZURE_CONNECTIONSTRING.split(' ')}
-else:
-    postgres_connection_string = dict(os.environ)
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': postgres_connection_string['POSTGRES_DB'],
-        'HOST': postgres_connection_string['HOST'],
-        'USER': postgres_connection_string['POSTGRES_USER'],
-        'PASSWORD': postgres_connection_string['POSTGRES_PASSWORD'],
+        'NAME': os.getenv('POSTGRES_USER'),
+        'HOST': os.getenv('HOST'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
     }
 }
 

@@ -1,0 +1,11 @@
+app/.venv*
+app/Dockerfile
+.env
+.gitignore
+compose.yml
+cleanse.sh
+*.md
+.vscode
+.git
+.DS_Store
+__pycache__/

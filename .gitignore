@@ -1,6 +1,5 @@
 .vscode
 .DS_Store
-staticfiles
 app/staticfiles
 
 # Byte-compiled / optimized / DLL files

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Apaulture{% endblock title %}
+
+{% block content %}
+    <!-- Nav -->
+    <div class="position-absolute top-50 start-50 translate-middle border border-3 border-dark text-center text-uppercase py-4" style="width: 50vw;">
+        <div class="w-auto">
+            <h1 class="fw-bold nav-focus">apaulture</h1><br />
+            <h2 class="nav-focus">fullstack</h2><br />
+            <h3 class="nav-focus">devops</h3><br />
+            <h4 class="nav-focus">ui＋ux</h4>
+        </div>
+    </div>
+
+    <footer class="position-absolute bottom-0 start-50 translate-middle-x mb-4" style="font-size: 1.4rem;">
+        <div class="row gx-4">
+            <div class="col">
+                <a href="https://github.com/Apaulture" class="link-secondary" target="_blank">
+                    <i class="bi-github"></i>
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://www.linkedin.com/in/apaulture/" class="link-secondary" target="_blank">
+                    <i class="bi-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function magnificationHandler(event) {
+            let element = $(this);
+            let entering = event.type == "mouseenter";
+            var blurRadius = entering ? 3.0 : 0.0;
+            
+            let blurInterval = setInterval(function(){                
+                element.css("text-shadow", `0 0 ${blurRadius}px rgba(0,0,0,1)`);
+                
+                if (entering) {
+                    blurRadius -= 0.1;
+                    if (blurRadius <= 0.0) {
+                        element.css("color", "");
+                        clearInterval(blurInterval);
+                    }
+                } else {
+                    blurRadius += 0.1;
+                    if (blurRadius >= 3.0) {
+                        element.css("color", "transparent");
+                        clearInterval(blurInterval);
+                    }
+                }
+            }, 4);
+        }
+
+        $(".nav-focus").hover(magnificationHandler);
+        $(".nav-focus").on("click", function() {
+            let element = $(this);
+        })
+        
+    </script>
+{% endblock content %}
