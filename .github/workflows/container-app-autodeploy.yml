@@ -35,6 +35,8 @@ jobs:
         with:
           appSourcePath: ${{ github.workspace }}/app 
           acrName: apaulture
+          acrUsername: ${{ secrets.CONTAINERAPP_REGISTRY_USERNAME }}
+          acrPassword: ${{ secrets.CONTAINERAPP_REGISTRY_PASSWORD }}
           containerAppName: container-app
           containerAppEnvironment: container-app-environment
           resourceGroup: apaulture
