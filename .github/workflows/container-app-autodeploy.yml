@@ -38,5 +38,9 @@ jobs:
           registryUsername: ${{ secrets.CONTAINERAPP_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.CONTAINERAPP_REGISTRY_PASSWORD }}
           containerAppName: container-app
+          containerAppEnvironment: container-app-environment
           resourceGroup: apaulture
           imageToBuild: docker.io/portfolio:web
+          disableTelemetry: true
+          buildArguments: |
+            "MANAGE_ENV=prod"
