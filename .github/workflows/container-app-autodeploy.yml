@@ -34,13 +34,10 @@ jobs:
         uses: azure/container-apps-deploy-action@v2
         with:
           appSourcePath: ${{ github.workspace }}/app 
-          registryUrl: docker.io
-          registryUsername: ${{ secrets.CONTAINERAPP_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.CONTAINERAPP_REGISTRY_PASSWORD }}
+          acrName: apaulture
           containerAppName: container-app
           containerAppEnvironment: container-app-environment
           resourceGroup: apaulture
-          imageToBuild: docker.io/portfolio:web
           disableTelemetry: true
           buildArguments: |
             "MANAGE_ENV=prod"
