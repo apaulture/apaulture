@@ -1,3 +1,5 @@
+# pip-compile --generate-hashes --allow-unsafe pyproject.toml -o requirements/<environment>.txt --extra <environment>
+
 [project]
 name = "Apaulture"
 version = "1"
@@ -6,7 +8,8 @@ dependencies = [
     "psycopg2-binary",
     "python-dotenv",
     "django-extensions",
-    "pip-tools"
+    "pip-tools",
+    "sqlparse >= 0.5.0" # To satisfy CVE-2024-4340 bruh
 ]
 
 [project.optional-dependencies]
