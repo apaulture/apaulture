@@ -1,21 +1,38 @@
 :root,
 [data-bs-theme=light] {
-    /* --bs-apaulture-rgb: 175, 182, 192; */
     --bs-apaulture-rgb: 140,145,153;
     --bs-apaulture-primary-rgb: 255,251,150;
 }
 
-.text-apaulture {
-    color: rgba(var(--bs-apaulture-primary-rgb, var(--bs-bg-opacity)));
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-
+body {
+    background-color: #85A8C9;
 }
-/* AFB6C0 */
+
+div#snellen-container {
+    width: 50vw;
+}
+
+/* Mobile - portrait */
+@media screen and (max-width: 428px) {
+    div#snellen-container {
+        width: 75vw;
+    }
+
+    h1.nav-focus {
+        font-size: 5vw;
+    }
+
+    h2.nav-focus,
+    h3.nav-focus,
+    h4.nav-focus {
+        font-size: 4vw;
+    }
+}
 
 .nav-focus {
     letter-spacing: 15px;
-    text-shadow: 0 0 3px rgba(0,0,0,1);
+    margin-right: -15px;
+    text-shadow: 0 0 3px rgba(255,255,255,1);
     color: transparent;
     display: inline-block;
 }
@@ -23,14 +40,4 @@
 .bg-apaulture {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-apaulture-rgb), var(--bs-bg-opacity)) !important;
-}
-
-.link-apaulture {
-    color: RGB(var(--bs-light-rgb));
-    opacity: 0.8;
-  }
-
-.link-apaulture:hover, .link-apaulture:focus {
-    color: RGB(var(--bs-light-rgb));
-    opacity: 1.0;
 }
