@@ -1,33 +1,34 @@
-# Hello, friend.
+# Hi 👋 fellow visitor!
+Paul is a full stack engineer with over four years of experience in designing and building impactful and delightful web apps.
 
-## 🧑🏼‍💻 Apaulture
-Paul is a full stack engineer with specialization in Django and UI/UX. His passion for building apps was ignited upon joining the Video Game Development Association at CSULB where he obtained his bachelor's degree in physics.
+<img width="100%" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=apaulture&theme=dark" />
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/apaulture)
-[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)]()
+
+## 🎒 Career
+**2023 - Current**
+
+Building a data center infrastructure management (DCIM) web application, enabling drafters and reviewers to manage and validate over 2400 data center parts, build assets and connections, and generate AutoCAD installation drawings for NAVWAR's PMW 790 shore installation/integration efforts.
+
+**2020 - 2023**
+
+Led a team of five engineers to kickstart Greenfield development on a now deployed web application for over 40 users spanned across six calibration laboratories, shipping, finance, quality control, personnel administration, and managerial departments at NAVAIR's Navy Primary Standards Laboratory.
+
+## 🛠 Toolkit
+- Languages: Python, JavaScript, HTML, CSS, SQL, Swift, bash, C#
+- Frameworks: Django, React, jQuery, Bootstrap, Node.JS, SwiftUI, RealityKit
+- Tools: VS Code, Docker, Git, Jira, CLI, PowerShell, Dev Tools, pgAdmin, Figma, Management Studio, Xcode, Unity
+- Technologies: GitHub Actions, AJAX, REST API, NGINX, uWSGI + vassals, DNS, PostgreSQL, SQL Server, WSL
+- Environments: macOS, Windows, Linux (Ubuntu), Azure, visionOS
 
 ## 📊 Stats
 ![apaulture's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=apaulture&theme=dark&show_icons=true&hide_border=false&layout=compact)
 
-## 🎒 Career
-Designing and engineering a Django-powered web application which empowers drafters via the automation of AutoCAD drawing for NAVWAR'S PMW 790 shore installation/integration efforts.
-
-From 2020-2023 at NAVAIR, Paul led a team of five non-software engineers to kickstart development on a now deployed web application for over forty users spanning six engineering naval laboratories, shipping & receiving, financial accounting, quality assurance, personnel administration, and managerial departments at Navy Primary Standards Laboratory.
-
-## 🍎 Learning
-- Linux Server for on-premise web application hosting
-- SwiftUI, RealityKit
-
-## 🔆 Fun
-
+## 🔆 Hobbies
 - Reading about finance and macroeconomics
-- Bouldering
-- Riding/maintaining my Kawasaki Ninja 650
-- Running
+- Learning and applying modern tech stacks
+- Training for a marathon in December 2024
+- Riding/maintaining a Kawasaki Ninja 650
+- Video games, ex-DotA nerd and founder of one the top 3 US DotA leagues
 
-## 🌑 Fun
-- Video games and arcade, ex-DotA nerd and blizzhead
-- EDM, psytrance, synthwave, vaporwave
-- Night driving
-
-Thanks for checking out my profile!
+Thanks for stopping by!
