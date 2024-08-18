@@ -1,64 +1,59 @@
-{% extends 'base.html' %}
-
+{% extends 'contexts/base.html' %}
+{% load static %}
 {% block title %}Apaulture{% endblock title %}
 
 {% block content %}
-    <!-- Nav -->
-    <div id="snellen-container" class="position-absolute top-50 start-50 translate-middle border border-2 border-light text-center text-uppercase pt-4">
-        <div class="w-auto">
-            {% with nav_classes="nav-focus text-light mb-4" %}
-                <h1 class="fw-bold {{ nav_classes }}">apaulture</h1><br />
-                <h2 class="{{ nav_classes }}">fullstack</h2><br />
-                <h3 class="{{ nav_classes }}">devops</h3><br />
-                <h4 class="{{ nav_classes }}">ui＋ux</h4>
-            {% endwith %}
-        </div>
-    </div>
+	<!-- Nav -->
+	<div id="snellen-container" class="position-absolute top-50 start-50 translate-middle border border-2 border-light text-center text-uppercase">
+		{% with nav_classes="main-nav nav-focus mb-4" %}
+			<a class="{{ nav_classes }} h1 fw-bold mt-4">apaulture</a><br />
+			<a class="{{ nav_classes }} h2">fullstack</a><br />
+			<a class="{{ nav_classes }} h3">devops</a><br />
+			<a class="{{ nav_classes }} h4">ui＋ux</a>
+		{% endwith %}
+	</div>
 
-    <footer class="position-absolute bottom-0 start-50 translate-middle-x mb-3" style="font-size: 1.4rem;">
-        <div class="row gx-4">
-            <div class="col">
-                <a href="https://github.com/Apaulture" class="link-light" target="_blank">
-                    <i class="bi-github"></i>
-                </a>
-            </div>
-            <div class="col">
-                <a href="https://www.linkedin.com/in/apaulture/" class="link-light" target="_blank">
-                    <i class="bi-linkedin"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
+	<script src="{% static 'js/deps/jquery-3.7.0.min.js' %}"></script>
+	<script src="{% static 'js/functions/effects.js' %}"></script>
+	<script>
+		$(".nav-focus").hover(magnificationHandler);
 
-    <script>
-        function magnificationHandler(event) {
-            let element = $(this);
-            let entering = event.type == "mouseenter";
-            var blurRadius = entering ? 4.0 : 0.0;
-            
-            let blurInterval = setInterval(function(){                
-                element.css("text-shadow", `0 0 ${blurRadius}px rgba(255,255,255,1)`);
-                
-                if (entering) {
-                    blurRadius -= 0.1;
-                    if (blurRadius <= 0.0) {
-                        element.css("color", "");
-                        clearInterval(blurInterval);
-                    }
-                } else {
-                    blurRadius += 0.1;
-                    if (blurRadius >= 4.0) {
-                        element.css("color", "transparent");
-                        clearInterval(blurInterval);
-                    }
-                }
-            }, 4);
-        }
+		$(".main-nav").on("click", function(e) {
+			$(".main-nav").off();
 
-        $(".nav-focus").hover(magnificationHandler);
-        $(".nav-focus").on("click", function() {
-            let element = $(this);
-        })
-        
-    </script>
+			let navs = document.querySelectorAll(".main-nav");
+			let navContainer = document.getElementById("snellen-container");
+			let postClickFadeDelay = 1500;
+			navContainer.style.transition = `all ${postClickFadeDelay / 1000}s ease-in`;
+
+			// Modify height
+			let promise = new Promise((resolve) => {
+				navContainer.style.height = `${navContainer.offsetHeight}px`;
+				setTimeout(resolve, 10);
+			})
+			promise.then(() => {
+				navContainer.style.height = "1px";
+				setTimeout(() => {
+					navContainer.style.transition = "";
+					$(navContainer).fadeOut();
+
+					// Render page
+					let page = $(this).text();
+					$.get(`ajax/${page}/`)
+					.done(response => {
+						$("div.container").html(response).hide().fadeIn();
+						$(`.navbar a.nav-link#${page}`).addClass("active");
+					});
+				}, postClickFadeDelay + 10);
+			});
+
+			// Fade out navigation items
+			for (let i = 0; i < navs.length; i++) {
+				let reversedIndex = navs.length - 1 - i;
+				setTimeout(() => {
+					$(navs[i]).fadeOut();
+				}, postClickFadeDelay / 5 * reversedIndex)
+			}
+		})
+	</script>
 {% endblock content %}

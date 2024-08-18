@@ -6,6 +6,7 @@
 
 body {
     background-color: #85A8C9;
+    color: white;
 }
 
 div#snellen-container {
@@ -18,18 +19,20 @@ div#snellen-container {
         width: 75vw;
     }
 
-    h1.nav-focus {
+    a.h1.nav-focus {
         font-size: 5vw;
     }
 
-    h2.nav-focus,
-    h3.nav-focus,
-    h4.nav-focus {
+    a.h2.nav-focus,
+    a.h3.nav-focus,
+    a.h4.nav-focus {
         font-size: 4vw;
     }
 }
 
 .nav-focus {
+    cursor: pointer;
+    text-decoration: none;
     letter-spacing: 15px;
     margin-right: -15px;
     text-shadow: 0 0 3px rgba(255,255,255,1);
@@ -40,4 +43,19 @@ div#snellen-container {
 .bg-apaulture {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-apaulture-rgb), var(--bs-bg-opacity)) !important;
+}
+
+div#body p, p.justify-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+div#body h4, .section-title {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+div.body, div.row .col-lg-9, .col-lg-3 {
+    overflow-y: scroll;
+    max-height: 78vh;
 }

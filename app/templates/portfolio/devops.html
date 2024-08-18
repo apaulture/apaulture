@@ -1,0 +1,84 @@
+{% extends 'contexts/page.html' %}
+
+{% block body %}
+<div class="overflow-hidden px-0">
+	<div class="row gx-5">
+		<div class="col-lg-9 mb-4">
+			<!-- offline app -->
+			<div class="mb-4">
+				<h4>offline app</h4>
+				<p>
+					Designed and deployed a containerized solution with Docker and a Django/ORM data pipeline for site surveyors to facilitate data collection in multiple offline environments across Japan and South Korea.
+				</p>
+				<i class="bi-stopwatch me-2"></i><i class="small">Feature story to be released in September of 2024.</i>
+			</div>
+
+			<!-- git bare -->
+			<div class="mb-4">
+				<h4>git bare</h4>
+				<p>
+					At the beginning of my tenure at INDUS Technology, I learned that the team's version control was faciliated by passing around git bundle files.
+					Think of it as a zipped git repository. The bundle files were named by version and stored on Teams for another developer to unbundle then update their local repository.
+					Knowing that this was unsustainable in the long term for many reasons, I managed to convince leadership to allow storing the remote repository on the network attached storage. 
+				</p>
+
+				<p>
+					After pondering and searching for a solution for teams without access to a git-based SAAS, I came across the bare repository.
+					Boy was I enthusiastic. As it turns out, a bare repository can be used as a central remote repository where developers can push/pull from. The lack of a working directory means that code cannot be modified directly.
+				</p>
+				<p>Just what the team needed.</p>
+
+				<p>
+					After running several tests locally and remotely, I deployed the bare repository to a directory on the network attached storage and onboarded the team.
+					After a couple of weeks, the lead retired the use of bundles entirely. Good riddance!
+				</p>
+
+				<p>
+					Many months passed. It is now January 2024, and I have just finished deploying the app to an on-premise Ubuntu VM, there was word on the street that the network attached storage was going away.
+				</p>
+
+				<p>
+					Challenge accepted.
+				</p>
+
+				<p>
+					I quickly shifted gears to formulating a solution for migrating our git bare repository to the vm. After some surface digging, a wild Git server appeared!
+					The first objective was to append some public ssh-generated keys to authorized keys. I went with ED25519.
+					Second was to trust IT on knowing what they were doing to secure our vm. Easy. After having worked with them a couple times, they proved their expertise.
+					Third was to get a git daemon service configured with our beautiful friend systemd so that it gets init-ed on startup.
+				</p>
+
+				<p>
+					After some time tinkering with user and group permissions and testing edge cases, I greenlit the service.
+					The Git server, now live, means that developers no longer have to depend on the network attached storage. Another good riddance!
+					The .git "extension" at the end of our bare repository makes this all a bit more official.
+				</p>
+			</div>
+
+			<!-- road to prod -->
+			<div class="mb-4">
+				<h4>road to prod</h4>
+				<p>
+					Once upon a time, there was a Django app with one setting file with DEBUG set to True, a sqlite3 database, and a master branch.
+				</p>
+				<i class="bi-stopwatch me-2"></i><i class="small">Feature story to be released in September of 2024.</i>
+			</div>
+		</div>
+		<div class="col-lg-3">
+				{% for side_section, side_section_maps in side_sections.items %}
+					<div class="{% if not forloop.last %}mb-3{% endif %} user-select-none">
+						<h4>{{ side_section }}</h4>
+						{% for key, value in side_section_maps.items %}
+							{% if value >= 0 %}
+								<i class="bi-{% if value %}{{ value }}-circle-fill{% else %}book{% endif %} me-2"></i>{{ key }}
+							{% else %}
+								{{ key }}
+							{% endif %}
+							<br />
+						{% endfor %}
+					</div>
+				{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock body %}

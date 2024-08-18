@@ -1,0 +1,34 @@
+{% extends 'contexts/page.html' %}
+
+{% block body %}
+<div class="overflow-hidden px-0">
+	<div class="row gx-5">
+		<div class="col-lg-9">
+			<div class="mb-4">
+				<h4>form & function</h4>
+				<p>
+					A walkthrough on Django forms.
+				</p>
+				<i class="bi-stopwatch me-2"></i><i class="small">Coming soon to a DOM near you in September 2024.</i>
+			</div>
+			
+		</div>
+		<div class="col-lg-3">
+			
+				{% for side_section, side_section_maps in side_sections.items %}
+					<div class="{% if not forloop.last %}mb-4{% endif %} user-select-none">
+						<h4>{{ side_section }}</h4>
+						{% for key, value in side_section_maps.items %}
+							{% if value >= 0 %}
+								<i class="bi-{% if value %}{{ value }}-circle-fill{% else %}book{% endif %} me-2"></i>{{ key }}
+							{% else %}
+								{{ key }}
+							{% endif %}
+							<br />
+						{% endfor %}
+					</div>
+				{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock body %}

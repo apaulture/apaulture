@@ -1,0 +1,22 @@
+<!-- Primary: Navigation -->
+{% include 'components/nav.html' %}
+
+<!-- Body -->
+<div id="body">
+	{% block body %}{% endblock body %}
+</div>
+
+<script>
+	$("nav.navbar").on("click", "a.nav-link", (event) => {
+		event.preventDefault();
+
+		// Render page
+		let page = event.target.id;
+		$.get(`ajax/${page}/`)
+		.done(response => {
+			$("#main").html(response);
+			$(`.navbar a.nav-link#${page}`).addClass("active");
+			$("#body").hide().fadeIn();
+		});
+	})
+</script>
