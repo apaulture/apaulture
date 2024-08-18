@@ -8,18 +8,19 @@ Paul is a full stack engineer with over four years of experience in designing an
 ## 🎒 Career
 **2023 - Current**
 
-Building a data center infrastructure management (DCIM) web application, enabling drafters and reviewers to manage and validate over 2400 data center parts, build assets and connections, and generate AutoCAD installation drawings for NAVWAR's PMW 790 shore installation/integration efforts.
+Building a data center infrastructure management (DCIM) web application, enabling drafters and reviewers to manage and validate over 3000 data center parts, build assets and connections, and generate AutoCAD installation drawings for NAVWAR's PMW 790 shore installation/integration efforts.
 
 **2020 - 2023**
 
-Led a team of five engineers to kickstart Greenfield development on a now deployed web application for over 40 users spanned across six calibration laboratories, shipping, finance, quality control, personnel administration, and managerial departments at NAVAIR's Navy Primary Standards Laboratory.
+Led a team of five engineers to kickstart Greenfield development on a now deployed portal application serving over 40 users spanned across six calibration laboratories, shipping, finance, quality control, personnel administration, and managerial departments at NAVAIR's Navy Primary Standards Laboratory. 
 
 ## 🛠 Toolkit
 - Languages: Python, JavaScript, HTML, CSS, SQL, Swift, bash, C#
-- Frameworks: Django, React, jQuery, Bootstrap, Node.JS, SwiftUI, RealityKit
-- Tools: VS Code, Docker, Git, Jira, CLI, PowerShell, Dev Tools, pgAdmin, Figma, Management Studio, Xcode, Unity
-- Technologies: GitHub Actions, AJAX, REST API, NGINX, uWSGI + vassals, DNS, PostgreSQL, SQL Server, WSL
-- Environments: macOS, Windows, Linux (Ubuntu), Azure, visionOS
+- Frameworks: Django, Bootstrap, Node.JS, SwiftUI, RealityKit
+- Libraries: jQuery, React
+- Tools: VS Code, Docker, Git, Jira, Dev Tools, pgAdmin, Figma, Management Studio, Xcode, Unity
+- Technologies: GitHub Actions, AJAX, REST API, NGINX, uWSGI, DNS, PostgreSQL, SQL Server, WSL
+- Environments: macOS, Windows, Linux (Ubuntu), Azure, CLI, PowerShell, visionOS
 
 ## 📊 Stats
 ![apaulture's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=apaulture&theme=dark&show_icons=true&hide_border=false&layout=compact)
