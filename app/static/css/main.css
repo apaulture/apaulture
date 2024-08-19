@@ -9,24 +9,98 @@ body {
     color: white;
 }
 
+div#main {
+    padding: 24px;
+}
+
 div#snellen-container {
     width: 50vw;
 }
 
+div#body p, p.justify-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+div#body h5, .section-title {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+div.body, div.row .col-lg-9, .col-lg-3 {
+    overflow-y: scroll;
+    max-height: 76vh;
+}
+
+footer {
+    margin-bottom: 1.5rem;
+}
+
 /* Mobile - portrait */
-@media screen and (max-width: 428px) {
-    div#snellen-container {
-        width: 75vw;
+@media screen and (max-width: 992px) {
+    div#main {
+        padding: 0.5rem 1.5rem 1.5rem 1.5rem;
     }
 
+    div#snellen-container {
+        width: 76vw;
+    }
+    
     a.h1.nav-focus {
         font-size: 5vw;
     }
-
     a.h2.nav-focus,
     a.h3.nav-focus,
     a.h4.nav-focus {
         font-size: 4vw;
+    }
+
+    div.row {
+        overflow-y: scroll;
+        max-height: 76vh;
+    }
+
+    div.row .col-lg-9, .col-lg-3 {
+        overflow-y: none;
+        max-height: 100%;
+    }
+}
+
+/* Mobile - landscape */
+@media screen and (max-height: 450px) {
+    div#main {
+        padding: 0.5rem 0 0.5rem 0;
+    }
+
+    div#snellen-container {
+        width: 70vw;
+    }
+
+    a.h1.nav-focus {
+        font-size: 4vw;
+    }
+    a.h2.nav-focus,
+    a.h3.nav-focus,
+    a.h4.nav-focus {
+        font-size: 3vw;
+    }
+
+    div.row {
+        overflow-y: scroll;
+        max-height: 52vh;
+    }
+
+    div.row .col-lg-9, .col-lg-3 {
+        max-height: 100%;
+    }
+
+    div.body {
+        max-height: 52vh;
+    }
+
+    footer {
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -43,19 +117,4 @@ div#snellen-container {
 .bg-apaulture {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-apaulture-rgb), var(--bs-bg-opacity)) !important;
-}
-
-div#body p, p.justify-text {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-div#body h4, .section-title {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-div.body, div.row .col-lg-9, .col-lg-3 {
-    overflow-y: scroll;
-    max-height: 78vh;
 }
