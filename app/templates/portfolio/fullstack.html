@@ -5,7 +5,7 @@
 	<div class="row gx-5">
 		<div class="col-lg-9">
 			<div class="mb-4">
-				<h4>form & function</h4>
+				<h5>form & function</h5>
 				<p>
 					A walkthrough on Django forms.
 				</p>
@@ -17,7 +17,7 @@
 			
 				{% for side_section, side_section_maps in side_sections.items %}
 					<div class="{% if not forloop.last %}mb-4{% endif %} user-select-none">
-						<h4>{{ side_section }}</h4>
+						<h5>{{ side_section }}</h5>
 						{% for key, value in side_section_maps.items %}
 							{% if value >= 0 %}
 								<i class="bi-{% if value %}{{ value }}-circle-fill{% else %}book{% endif %} me-2"></i>{{ key }}
