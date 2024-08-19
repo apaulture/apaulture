@@ -6,7 +6,7 @@
 		<div class="col-lg-9 mb-4">
 			<!-- offline app -->
 			<div class="mb-4">
-				<h4>offline app</h4>
+				<h5>offline app</h5>
 				<p>
 					Designed and deployed a containerized solution with Docker and a Django/ORM data pipeline for site surveyors to facilitate data collection in multiple offline environments across Japan and South Korea.
 				</p>
@@ -15,7 +15,7 @@
 
 			<!-- git bare -->
 			<div class="mb-4">
-				<h4>git bare</h4>
+				<h5>git bare</h5>
 				<p>
 					At the beginning of my tenure at INDUS Technology, I learned that the team's version control was faciliated by passing around git bundle files.
 					Think of it as a zipped git repository. The bundle files were named by version and stored on Teams for another developer to unbundle then update their local repository.
@@ -56,8 +56,8 @@
 			</div>
 
 			<!-- road to prod -->
-			<div class="mb-4">
-				<h4>road to prod</h4>
+			<div>
+				<h5>road to prod</h5>
 				<p>
 					Once upon a time, there was a Django app with one setting file with DEBUG set to True, a sqlite3 database, and a master branch.
 				</p>
@@ -65,19 +65,19 @@
 			</div>
 		</div>
 		<div class="col-lg-3">
-				{% for side_section, side_section_maps in side_sections.items %}
-					<div class="{% if not forloop.last %}mb-3{% endif %} user-select-none">
-						<h4>{{ side_section }}</h4>
-						{% for key, value in side_section_maps.items %}
-							{% if value >= 0 %}
-								<i class="bi-{% if value %}{{ value }}-circle-fill{% else %}book{% endif %} me-2"></i>{{ key }}
-							{% else %}
-								{{ key }}
-							{% endif %}
-							<br />
-						{% endfor %}
-					</div>
-				{% endfor %}
+			{% for side_section, side_section_maps in side_sections.items %}
+				<div class="{% if not forloop.last %}mb-3{% endif %} user-select-none">
+					<h5>{{ side_section }}</h5>
+					{% for key, value in side_section_maps.items %}
+						{% if value >= 0 %}
+							<i class="bi-{% if value %}{{ value }}-circle-fill{% else %}book{% endif %} me-2"></i>{{ key }}
+						{% else %}
+							{{ key }}
+						{% endif %}
+						<br />
+					{% endfor %}
+				</div>
+			{% endfor %}
 		</div>
 	</div>
 </div>
