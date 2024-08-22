@@ -1,12 +1,10 @@
-:root,
-[data-bs-theme=light] {
-    --bs-apaulture-rgb: 140,145,153;
-    --bs-apaulture-primary-rgb: 255,251,150;
-}
-
 body {
     background-color: #85A8C9;
     color: white;
+}
+
+kbd {
+    background-color: #1a2128;
 }
 
 div#main {
@@ -30,11 +28,37 @@ div#body h5, .section-title {
 
 div.body, div.row .col-lg-9, .col-lg-3 {
     overflow-y: scroll;
+    
+     /* Hide scrollbar for Chrome, Safari and Opera */
+    .example::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .example {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    } 
     max-height: 76vh;
 }
 
 footer {
     margin-bottom: 1.5rem;
+}
+
+.nav-focus {
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 15px;
+    margin-right: -15px;
+    text-shadow: 0 0 3px rgba(255,255,255,1);
+    color: transparent;
+    display: inline-block;
+}
+
+.bg-apaulture {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-apaulture-rgb), var(--bs-bg-opacity)) !important;
 }
 
 /* Mobile - portrait */
@@ -102,19 +126,4 @@ footer {
     footer {
         margin-bottom: 0.5rem;
     }
-}
-
-.nav-focus {
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: 15px;
-    margin-right: -15px;
-    text-shadow: 0 0 3px rgba(255,255,255,1);
-    color: transparent;
-    display: inline-block;
-}
-
-.bg-apaulture {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-apaulture-rgb), var(--bs-bg-opacity)) !important;
 }
