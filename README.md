@@ -6,7 +6,7 @@ Paul is a full stack engineer with over four years of experience in designing an
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/apaulture)
 
 ## 🎒 Career
-**2023 - Current**
+**2023 - Now**
 
 Building a data center infrastructure management (DCIM) web application, enabling drafters and reviewers to manage and validate over 3000 data center parts, build assets and connections, and generate AutoCAD installation drawings for NAVWAR's PMW 790 shore installation/integration efforts.
 
@@ -16,7 +16,7 @@ Led a team of five engineers to kickstart Greenfield development on a now deploy
 
 ## 🛠 Toolkit
 - Languages: Python, JavaScript, HTML, CSS, SQL, Swift, bash, C#
-- Frameworks: Django, Bootstrap, Node.JS, SwiftUI, RealityKit
+- Frameworks: Django, Bootstrap, Node.js, SwiftUI, RealityKit
 - Libraries: jQuery, React
 - Tools: VS Code, Docker, Git, Jira, Dev Tools, pgAdmin, Figma, Management Studio, Xcode, Unity
 - Technologies: GitHub Actions, AJAX, REST API, NGINX, uWSGI, DNS, PostgreSQL, SQL Server, WSL
@@ -30,6 +30,6 @@ Led a team of five engineers to kickstart Greenfield development on a now deploy
 - Learning and applying modern tech stacks
 - Training for a marathon in December 2024
 - Riding/maintaining a Kawasaki Ninja 650
-- Video games, ex-DotA nerd and founder of one the top 3 US DotA leagues
+- Video games, ex-DotA nerd and founder of one of the top 3 US DotA leagues
 
 Thanks for stopping by!
