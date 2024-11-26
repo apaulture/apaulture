@@ -18,7 +18,7 @@ class RenderTemplateView(TemplateView):
                 },
                 'libraries': {
                     'jQuery': 3,
-                    'React': 0,
+                    'React': 1,
                 },
                 'languages': {
                     'Python': 5,
