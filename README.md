@@ -1,14 +1,14 @@
 # Hi 👋 fellow visitor!
-Paul is a full stack engineer with over four years of experience in designing and building impactful and delightful web apps.
+Paul is a full stack engineer with four and a half years of experience in designing and building impactful and delightful web apps.
 
 <img width="100%" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=apaulture&theme=dark" />
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/apaulture)
 
 ## 🎒 Career
-**2023 - Now**
+**2023 - 2024**
 
-Building a data center infrastructure management (DCIM) web application, enabling drafters and reviewers to manage and validate over 3000 data center parts, build assets and connections, and generate AutoCAD installation drawings for NAVWAR's PMW 790 shore installation/integration efforts.
+Engineered and designed a data center infrastructure management (DCIM) web application, enabling drafters and reviewers to manage and validate over 3300 data center parts, build assets and connections, and generate AutoCAD installation drawings for NAVWAR's PMW 790 shore installation/integration efforts.
 
 **2020 - 2023**
 
@@ -24,12 +24,5 @@ Led a team of five engineers to kickstart Greenfield development on a now deploy
 
 ## 📊 Stats
 ![apaulture's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=apaulture&theme=dark&show_icons=true&hide_border=false&layout=compact)
-
-## 🔆 Hobbies
-- Reading about finance and macroeconomics
-- Learning and applying modern tech stacks
-- Training for a marathon in December 2024
-- Riding/maintaining a Kawasaki Ninja 650
-- Video games, ex-DotA nerd and founder of one of the top 3 US DotA leagues
 
 Thanks for stopping by!
