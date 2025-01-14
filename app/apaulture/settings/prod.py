@@ -1,11 +1,14 @@
 from .base import *
 
-protocol = 'https://'
-
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', os.getenv('CNAME'), os.getenv('WEBSITE_HOSTNAME')]
-CSRF_TRUSTED_ORIGINS = [f'http://localhost:{os.getenv("APP_PORT")}']
+ALLOWED_HOSTS = [
+    'localhost',
+    f'.{os.getenv("CNAME")}',
+    os.getenv('WEBSITE_HOSTNAME'),
+]
+protocol = 'https://'
+CSRF_TRUSTED_ORIGINS = [f'{protocol}{os.getenv("CNAME")}']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -20,17 +23,12 @@ MIDDLEWARE = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_USER'),
-        'HOST': os.getenv('HOST'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.getenv('DB_PATH') or BASE_DIR / 'db.sqlite3',
     }
 }
 
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",

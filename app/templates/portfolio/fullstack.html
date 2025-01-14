@@ -11,23 +11,9 @@
 				</p>
 				<i class="bi-stopwatch me-2"></i><i class="small">Coming soon to a DOM near you.</i>
 			</div>
-			
 		</div>
 		<div class="col-lg-3">
-			
-				{% for side_section, side_section_maps in side_sections.items %}
-					<div class="{% if not forloop.last %}mb-4{% endif %} user-select-none">
-						<h5>{{ side_section }}</h5>
-						{% for key, value in side_section_maps.items %}
-							{% if value >= 0 %}
-								<i class="bi-{% if value %}{{ value }}-circle-fill{% else %}book{% endif %} me-2"></i>{{ key }}
-							{% else %}
-								{{ key }}
-							{% endif %}
-							<br />
-						{% endfor %}
-					</div>
-				{% endfor %}
+			{% include "components/subbranches.html" %}
 		</div>
 	</div>
 </div>
