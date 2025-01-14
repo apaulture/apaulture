@@ -1,0 +1,15 @@
+{% load conversions %}
+
+{% for subbranch in subbranches %}
+    <div class="{% if not forloop.last %}mb-4{% endif %} user-select-none">
+        <h5>{{ subbranch }}</h5>
+        {% for skill in subbranch.skill_set.all %}
+            {% if skill.days %}
+                <i class="bi-{% if skill.days|year %}{{ skill.days|year }}-circle-fill{% else %}book{% endif %} me-2"></i>{{ skill }}
+            {% else %}
+                {{ skill }}
+            {% endif %}
+            <br />
+        {% endfor %}
+    </div>
+{% endfor %}
