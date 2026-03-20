@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { LuKeyboard } from "react-icons/lu"
 import { MdEmail } from "react-icons/md"
 
 function App() {
+  const alphabets = "abcdefghijklmnopqrstuvwxyz".split("")
   const inclusion = [
     {accent: "oklch(82.3% 0.12 346.018)", text: "text-white"},
     {accent: "oklch(95.6% 0.045 203.388)", text: "text-slate-500"},
@@ -14,7 +16,8 @@ function App() {
   const [backgroundColor, setBackgroundColor] = useState(inclusion[4].accent)
   const [currentTextColor, setCurrentTextColor] = useState(inclusion[4].text)
   const [userText, setUserText] = useState("")
-  const alphabets = "abcdefghijklmnopqrstuvwxyz".split("")
+  const isMobile = /mobi/i.test(navigator.userAgent)
+  
   document.onkeydown = (event) => {
     if (userText.length < 17) {
       if (event.key == " ") {
@@ -27,17 +30,23 @@ function App() {
     event.key == "Backspace" && setUserText(userText.slice(0, userText.length - 1))
     event.key == "Enter" && setUserText("")
   }
+
   const transform = () => {
     let random
     // Randomly pick a different accent until background and cursor colors do not match
     do {
       random = Math.floor(Math.random() * (inclusion.length))
-      console.log(random)
     } while (inclusion[random].accent == cursorColor)
     setCursorColor(inclusion[random].accent)
     setBackgroundColor(cursorColor)
     const matchedInclusion = inclusion.filter(i => i.accent == cursorColor)
     setCurrentTextColor(matchedInclusion[0].text)
+  }
+
+  const toggleKeyboard = () => {
+    if ("virtualKeyboard" in navigator) {
+      navigator.virtualKeyboard.show()
+    }
   }
   return (
     <div className={"grid h-screen " + currentTextColor} style={{backgroundColor: backgroundColor}}>
@@ -54,12 +63,13 @@ function App() {
         </kbd>
         <div className="grid text-sm">
           <span className="font-semibold">approach</span>
-          <span>humans over ai</span>
-          <span>privacy is paramount</span>
+          <span>design with love</span>
           <span>less is more</span>
+          <span>respect user privacy</span>
         </div>
-        <div className="flex">
-          <a href="mailto:9xxp593l8@mozmail.com" className="flex hover:opacity-80 text-2xl"><MdEmail /></a>
+        <div className="flex gap-3 text-2xl">
+          <a href="mailto:9xxp593l8@mozmail.com" className="hover:opacity-80"><MdEmail /></a>
+          {isMobile && <button className="hover:opacity-80 cursor-pointer" type="button" onClick={toggleKeyboard}><LuKeyboard /></button>}
         </div>
       </div>
     </div>
