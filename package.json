@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "previewlive": "wrangler versions upload --preview-alias staging",
+    "previewlive": "npm run build && wrangler versions upload --preview-alias staging",
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {

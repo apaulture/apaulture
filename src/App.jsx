@@ -39,18 +39,23 @@ function App() {
   const [isTyping, setIsTyping] = useState(false)
   const [returnToggled, setReturnToggled] = useState(false)
   const [cursorColor, setCursorColor] = useState(inclusion[0].accent)
+  const [cursorWwidth, cursorHeight] = [8, 20]
+  const inputRef = useRef(null);
   const cursorElement = (
     <svg
-      viewBox="0 0 10 24"
-      width="10"
-      height="24"
-      className={`rounded-xs hover:opacity-80 cursor-pointer cursor ${isTyping ? 'typing' : ''} ${returnToggled ? 'loading' : ''}`}
+      viewBox={`0 0 ${cursorWwidth} ${cursorHeight}`}
+      width={cursorWwidth}
+      height={cursorHeight}
+      className={`hover:opacity-80 cursor-pointer cursor ${isTyping ? "typing" : ""} ${returnToggled ? "loading" : ""}`}
       onClick={(e) => {
         e.stopPropagation()
         transform()
+        if (inputRef.current) {
+          inputRef.current.focus();
+        }
       }}
     >
-      <rect width="10" height="24" fill={cursorColor} />
+      <rect width={cursorWwidth} height={cursorHeight} fill={cursorColor} />
     </svg>
     
   )
@@ -76,7 +81,7 @@ function App() {
     if (event.key === "Enter") {
       setReturnToggled(true)
       setTimeout(() => {
-        window.location.href = 'mailto:hello@apaulture.com?subject=hello&body=' + userText
+        window.location.href = "mailto:hello@apaulture.com?subject=hello&body=" + userText
         setUserText("")
         setReturnToggled(false)
       }, 1500)
@@ -98,19 +103,35 @@ function App() {
   return (
     <div className={"grid h-screen " + currentTextColor} style={{backgroundColor: backgroundColor}}>
       <div className="grid rounded gap-4 p-3 w-88 place-self-center place-self-center p-2 bg-white/40">
-        <input type="text" className="hidden" />
         <kbd className="flex text-sm gap-2">
           apaulture
           $
           <div className="flex">
             <pre>{userText}</pre>
-            {cursorElement}
+            <div style={{ position: "relative", display: "inline-block" }}>
+              {/* Hidden input field required to invoke the virtual keyboard */}
+              <input
+                ref={inputRef}
+                type="text"
+                style={{
+                  position: "absolute",
+                  opacity: 0,
+                  pointerEvents: "none",
+                  height: 0,
+                  width: 0,
+                  border: "none",
+                  outline: "none",
+                }}
+                aria-hidden="true"
+              />
+              {cursorElement}
+            </div>
           </div>
         </kbd>
 
         <kbd className="text-xs">
           <span className="opacity-70">{charactersSupport - userText.length} characters remaining<br /></span>
-          <span className={userText.length == 0 ? 'opacity-70' : ''}>
+          <span className={userText.length == 0 ? "opacity-70" : ""}>
             <BsArrowReturnLeft className="inline" /> to prepare email
           </span>
         </kbd>
