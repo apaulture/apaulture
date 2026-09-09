@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+.cursor {
+  animation: blink 1s step-end infinite;
+}
+
+.cursor.typing {
+  animation: none;
+  opacity: 1;
+}
+
+.cursor.loading {
+  animation: spin 1s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
